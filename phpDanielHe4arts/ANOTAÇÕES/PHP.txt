@@ -1,0 +1,193 @@
+var_dump() é uma função em PHP usada para exibir informações detalhadas sobre uma ou mais variáveis, incluindo o tipo de dado e seu valor. É útil para depurar e entender o conteúdo das variáveis durante o desenvolvimento de um programa PHP.
+
+Ao usar var_dump(), você pode ver informações como o tipo de dado (string, integer, array, etc.), o tamanho (no caso de strings e arrays), e o valor da variável. Isso pode ser especialmente útil ao lidar com variáveis complexas, como arrays multidimensionais ou objetos.
+
+A sintaxe básica de var_dump() é simples:
+
+php
+Copy code
+var_dump($variavel);
+Substitua $variavel pelo nome da variável que você deseja examinar. Por exemplo:
+
+php
+Copy code
+$idade = 25;
+$nome = "João";
+$array = array(1, 2, 3);
+
+var_dump($idade);
+var_dump($nome);
+var_dump($array);
+A saída seria algo como:
+
+scss
+Copy code
+int(25)
+string(4) "João"
+array(3) {
+  [0]=>
+  int(1)
+  [1]=>
+  int(2)
+  [2]=>
+  int(3)
+}
+Isso indica que $idade é um inteiro com valor 25, $nome é uma string com 4 caracteres ("João"), e $array é um array com 3 elementos inteiros (1, 2 e 3).
+_______________________________________________________________________________________________________________________________________________________________________
+
+OPERADORES DE ARRAY:
+
+Operador de Igualdade (==):
+
+O operador == verifica se os valores de dois operandos são iguais, independentemente de seus tipos de dados.
+Exemplo:
+php
+Copy code
+$a = 5;
+$b = "5";
+if ($a == $b) {
+    echo "Os valores de \$a e \$b são iguais.";
+}
+Neste exemplo, mesmo que $a seja um número inteiro e $b seja uma string representando o número 5, o operador de igualdade == considera os valores como iguais e a mensagem será impressa.
+Operador de Identidade (===):
+
+O operador === verifica se os valores e os tipos de dados de dois operandos são idênticos.
+Exemplo:
+php
+Copy code
+$a = 5;
+$b = "5";
+if ($a === $b) {
+    echo "Os valores e tipos de \$a e \$b são idênticos.";
+}
+Neste exemplo, como $a é um inteiro e $b é uma string, o operador de identidade === não considera os valores idênticos e a mensagem não será impressa.
+Operador de Diferença (!=):
+
+O operador != verifica se os valores de dois operandos são diferentes, independentemente de seus tipos de dados.
+Exemplo:
+php
+Copy code
+$a = 5;
+$b = "5";
+if ($a != $b) {
+    echo "Os valores de \$a e \$b são diferentes.";
+}
+Neste exemplo, o operador de diferença != considerará os valores diferentes e a mensagem será impressa, pois mesmo que $a e $b contenham o mesmo valor, eles têm tipos diferentes.
+Operador de Não Identidade (!==):
+
+O operador !== verifica se os valores e os tipos de dados de dois operandos são diferentes.
+Exemplo:
+php
+Copy code
+$a = 5;
+$b = "5";
+if ($a !== $b) {
+    echo "Os valores e tipos de \$a e \$b são diferentes.";
+}
+Neste exemplo, como $a é um inteiro e $b é uma string, o operador de não identidade !== considera tanto os valores quanto os tipos de dados diferentes, e a mensagem será impressa.
+Esses operadores são úteis para fazer comparações entre variáveis em PHP, levando em consideração tanto os valores quanto os tipos de dados.
+
+OBS: Se no terminal voce espera um retorno booleano(true ou false), e ele retorna int(0)- quer dizer false, e int(1)- quer dizerverdadeiro.
+
+                                            OPERADOR DE EXECUÇÃO:
+O operador de execução do PHP, representado pelos backticks (), é usado para executar comandos do sistema operacional diretamente a partir de um script PHP. Por exemplo, você pode executar comandos de terminal ou shell e obter os resultados de volta no seu código PHP. No entanto, é importante usar essa funcionalidade com cuidado para evitar vulnerabilidades de segurança, especialmente ao lidar com entrada de usuário ou dados dinâmicos. Recomenda-se usar funções específicas de sistema, como exec(), shell_exec(), passthru()`, etc., para interagir com o sistema operacional de maneira mais segura.
+No PHP, o operador de execução `` (backticks) é usado para executar comandos do sistema operacional a partir do código PHP. É uma maneira de integrar funcionalidades do sistema operacional diretamente em seus scripts PHP.
+
+Por exemplo, se você quiser executar um comando no terminal ou shell do seu sistema operacional a partir de um script PHP e obter o resultado desse comando de volta no script PHP, você pode usar o operador de execução ``.
+
+Aqui está um exemplo simples:
+
+php
+Copy code
+$resultado = `ls -l`;
+echo $resultado;
+Neste exemplo, o comando ls -l é executado no sistema operacional. Ele lista os arquivos e diretórios no diretório atual. O resultado desse comando é armazenado na variável $resultado, que pode ser usada posteriormente no script PHP. Em seguida, o resultado é exibido usando echo.
+
+É importante observar que o uso do operador de execução pode ser uma questão de segurança, especialmente se os comandos envolverem entrada do usuário ou dados dinâmicos. É crucial filtrar e validar quaisquer dados fornecidos pelo usuário para evitar injeções de código malicioso ou comandos perigosos. Recomenda-se usar funções específicas para manipulação de sistema, como exec(), shell_exec(), passthru(), etc., que fornecem maneiras mais seguras de interagir com o sistema operacional.
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+OPERADOR TERNÁRIO (?:)
+O operador ternário é uma expressão condicional que permite tomar uma decisão com base em uma condição. Ele é frequentemente usado como uma alternativa mais compacta a uma estrutura if-else.
+
+A sintaxe básica do operador ternário é a seguinte:
+
+php
+Copy code
+condição ? valor_se_verdadeiro : valor_se_falso;
+Se a condição fornecida for avaliada como verdadeira, o operador ternário retorna o valor_se_verdadeiro.
+Se a condição fornecida for avaliada como falsa, o operador ternário retorna o valor_se_falso.
+Exemplo:
+
+php
+Copy code
+$idade = 18;
+$status = ($idade >= 18) ? 'Adulto' : 'Menor';
+echo $status; // Saída: Adulto
+Operador de Coalescência Nula (??)
+O operador de coalescência nula (??) é uma adição ao PHP 7 e é usado para fornecer um valor padrão para uma variável que pode ser nula. Ele simplifica a verificação de nulidade antes de atribuir um valor padrão.
+
+A sintaxe básica do operador de coalescência nula é a seguinte:
+
+php
+Copy code
+$variavel = expressao_que_pode_ser_nula ?? valor_padrao;
+Se expressao_que_pode_ser_nula não for nula, $variavel receberá seu valor.
+Se expressao_que_pode_ser_nula for nula, $variavel receberá o valor_padrao.
+Exemplo:
+
+php
+Copy code
+$usuario = ['nome' => 'Maria', 'idade' => null];
+$idade = $usuario['idade'] ?? 'Idade não informada';
+echo $idade; // Saída: Idade não informada
+Esses operadores são úteis para escrever código mais conciso e legível, especialmente em situações onde você precisa fazer decisões com base em condições ou lidar com valores potencialmente nulos.
+
+
+                    Interpolação de Variáveis:
+    Aspas Simples (' '): O PHP não interpreta variáveis dentro delas, ou seja, se você escrever '$nome', ele vai mostrar exatamente '$nome', não vai substituir pela variável.
+Aspas Duplas (" "): O PHP interpreta e substitui as variáveis dentro delas, então se você escrever "$nome", ele vai mostrar o valor da variável $nome. Resumindo, as aspas duplas permitem que o PHP interprete variáveis, enquanto as aspas simples não permitem.
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+                        CAMEL CASE:
+Camel Case é uma convenção de nomenclatura usada em programação onde as palavras compostas são unidas e cada palavra subsequente é capitalizada, exceto a primeira palavra. Geralmente, o primeiro caractere de uma identificação Camel Case é minúsculo.
+
+Existem duas variações comuns de Camel Case:
+
+- Lower Camel Case (ou camelCase): Na Lower Camel Case, a primeira letra da identificação é minúscula e cada palavra subsequente tem sua primeira letra maiúscula, sem espaços ou caracteres especiais entre as palavras.
+Exemplo: nomeDaVariavel, calculoBaseX, estaEhUmaFrase.
+
+- Upper Camel Case (ou PascalCase): Na Upper Camel Case, a primeira letra de cada palavra é capitalizada, sem espaços ou caracteres especiais entre as palavras.
+Exemplo: NomeDaClasse, CalcularValorTotal, CriaInstanciaDoObjeto. O Camel Case é comumente usado em várias linguagens de programação, incluindo Java, JavaScript, PHP, C#, entre outras, para nomear variáveis, funções, métodos, classes e outras identificações. Ele é preferido por ser fácil de ler e digitar e por ser uma convenção amplamente adotada na comunidade de desenvolvimento de software.
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+FUNÇÃO var_dump($argv):
+A função var_dump($argv); em PHP é usada para exibir informações detalhadas sobre uma variável ou variáveis, incluindo o tipo e o valor das mesmas.
+
+No caso específico de $argv, é uma matriz (array) que contém os argumentos passados para o script PHP a partir da linha de comando quando o script é executado.
+
+Por exemplo, se você tiver um script PHP chamado meu_script.php e o executar a partir da linha de comando com argumentos, como este:
+
+Copy code
+php meu_script.php argumento1 argumento2 argumento3
+A variável $argv conterá:
+
+$argv[0]: O nome do script (meu_script.php).
+$argv[1]: O primeiro argumento (argumento1).
+$argv[2]: O segundo argumento (argumento2).
+$argv[3]: O terceiro argumento (argumento3).
+Então, ao usar var_dump($argv);, ele imprimirá algo assim:
+
+scss
+Copy code
+array(4) {
+  [0]=>
+  string(12) "meu_script.php"
+  [1]=>
+  string(9) "argumento1"
+  [2]=>
+  string(9) "argumento2"
+  [3]=>
+  string(9) "argumento3"
+}
+Cada elemento da matriz é rotulado com seu índice e seguido pelo tipo e valor do elemento. Isso é útil para depurar e entender os dados que o script recebe da linha de comando.
+
+
+

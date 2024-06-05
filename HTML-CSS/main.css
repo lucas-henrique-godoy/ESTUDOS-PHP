@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Fira Code';
+    src: url(/fonts/FiraCode-VariableFont_wght.ttf);
+}
+
+
+body{
+    background-color: black;
+    color: #33cc33;
+    
+}
+
+.header{
+    text-align: center;
+}
+
+.header-img{
+    border-radius: 50%;
+    border: 3px solid #33cc33;
+    margin: 20px;
+}
+
+.content {
+    font-family: 'Fira Code';
+    margin: 50px auto; /* Centraliza o conteúdo horizontalmente */
+    width: 60%; /* Ajuste conforme necessário para definir uma largura específica */
+    text-align: justify; /* Justifica o texto */
+}
+
+.content ul {
+    list-style-position: inside; /* Alinha os marcadores dentro dos itens da lista */
+    text-align: left; /* Alinha o texto dos itens da lista à esquerda */
+}
+
+.content ul li {
+    text-align: justify; /* Justifica o texto dos itens da lista */
+}
+
+
+
+mark{
+    background-color: #33cc33;
+    color: black;
+}
+
+.footer{
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    color: #80cc33;
+    font-weight: 600;
+}
+
+input{
+    color: #33cc33;
+    border: 1px solid #33cc33; 
+    background-color: black;
+}
+
+textarea{
+    color: #33cc33 ;
+    border: 1px solid #33cc33; 
+    background-color: black;
+}
+
+button{
+    color: #33cc33;
+    border: 1px solid #33cc33; 
+    background-color: black; 
+    margin: 10px;
+}
+
+.formulario{
+    border: 1px solid #33cc33;
+    width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+   
+}
+
